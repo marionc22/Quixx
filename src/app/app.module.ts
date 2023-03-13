@@ -3,10 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SimpleGridComponent } from './components/simple-grid/simple-grid.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SimpleGridComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,

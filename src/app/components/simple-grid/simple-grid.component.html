@@ -1,0 +1,127 @@
+<div class="row">
+  <div [ngClass]="redClosed ? 'lineClosed' : 'red'" *ngFor="let red of redGrid">
+    <div (click)="addRed(red)" class="redSquare">
+      {{ red }}
+      <img
+        *ngIf="crossedRed.indexOf(red) >= 0"
+        class="cross"
+        src="../../../assets/cross.png"
+      />
+    </div>
+  </div>
+  <div (click)="addRed(13)" [ngClass]="redClosed ? 'imgClosed' : 'redImg'">
+    <img src="../../../assets/picto-cadenas.png" width="50px" height="40px" />
+    <img
+      *ngIf="crossedRed.indexOf(13) >= 0"
+      class="cross"
+      src="../../../assets/cross.png"
+    />
+  </div>
+</div>
+<div class="row">
+  <div
+    [ngClass]="yellowClosed ? 'lineClosed' : 'yellow'"
+    *ngFor="let yellow of yellowGrid"
+  >
+    <div (click)="addYellow(yellow)" class="yellowSquare">
+      {{ yellow }}
+      <img
+        *ngIf="crossedYellow.indexOf(yellow) >= 0"
+        class="cross"
+        src="../../../assets/cross.png"
+      />
+    </div>
+  </div>
+  <div
+    (click)="addYellow(13)"
+    [ngClass]="yellowClosed ? 'imgClosed' : 'yellowImg'"
+  >
+    <img src="../../../assets/picto-cadenas.png" width="50px" height="40px" />
+    <img
+      *ngIf="crossedYellow.indexOf(13) >= 0"
+      class="cross"
+      src="../../../assets/cross.png"
+    />
+  </div>
+</div>
+<div class="row">
+  <div
+    [ngClass]="greenClosed ? 'lineClosed' : 'green'"
+    *ngFor="let green of greenGrid"
+  >
+    <div (click)="addGreen(green)" class="greenSquare">
+      {{ green }}
+      <img
+        *ngIf="crossedGreen.indexOf(green) >= 0"
+        class="cross"
+        src="../../../assets/cross.png"
+      />
+    </div>
+  </div>
+  <div
+    (click)="addGreen(13)"
+    [ngClass]="greenClosed ? 'imgClosed' : 'greenImg'"
+  >
+    <img src="../../../assets/picto-cadenas.png" width="50px" height="40px" />
+    <img
+      *ngIf="crossedGreen.indexOf(13) >= 0"
+      class="cross"
+      src="../../../assets/cross.png"
+    />
+  </div>
+</div>
+<div class="row">
+  <div
+    [ngClass]="blueClosed ? 'lineClosed' : 'blue'"
+    *ngFor="let blue of blueGrid"
+  >
+    <div (click)="addBlue(blue)" class="blueSquare">
+      {{ blue }}
+      <img
+        *ngIf="crossedBlue.indexOf(blue) >= 0"
+        class="cross"
+        src="../../../assets/cross.png"
+      />
+    </div>
+  </div>
+  <div (click)="addBlue(13)" [ngClass]="blueClosed ? 'imgClosed' : 'blueImg'">
+    <img src="../../../assets/picto-cadenas.png" width="50px" height="40px" />
+    <img
+      *ngIf="crossedBlue.indexOf(13) >= 0"
+      class="cross"
+      src="../../../assets/cross.png"
+    />
+  </div>
+</div>
+
+<div class="malus">
+  <input (change)="addMalus($event)" type="checkbox" /><input
+    (change)="addMalus($event)"
+    type="checkbox"
+  /><input (change)="addMalus($event)" type="checkbox" /><input
+    (change)="addMalus($event)"
+    type="checkbox"
+  />
+</div>
+
+<Button (click)="getTotal()">Fin de partie</Button>
+
+<div  *ngIf="displayTotal" class="popUpFinal">
+    <img (click)="this.displayTotal = false" class="crossFinal" src="../../../assets/cross.png" >
+    <p>Score Final</p>
+    <div class="scoreByColor">
+  
+  <p class="redScore">{{ totalRed }}</p> <p class="symbol">+</p>
+  <p class="yellowScore">{{ totalYellow }}</p><p class="symbol">+</p>
+  <p class="greenScore">{{ totalGreen }}</p><p class="symbol">+</p>
+  <p class="blueScore">{{ totalBlue }}</p><p class="symbol">-</p>
+  <p class="malusScore">{{totalMalus}}</p>
+</div>
+
+<h2>Total</h2>
+<p>{{totalPoints}}</p>
+
+<button>Rejouer</button>
+</div>
+
+
