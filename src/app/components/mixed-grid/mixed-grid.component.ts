@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-simple-grid',
-  templateUrl: './simple-grid.component.html',
-  styleUrls: ['./simple-grid.component.css'],
+  selector: 'app-mixed-grid',
+  templateUrl: './mixed-grid.component.html',
+  styleUrls: ['./mixed-grid.component.css'],
 })
-export class SimpleGridComponent implements OnInit {
+export class MixedGridComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
 
-  redGrid = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  yellowGrid = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  greenGrid = [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2];
-  blueGrid = [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2];
+  redGrid = [10, 6, 2, 8, 3, 4, 12, 5, 9, 7, 11];
+  yellowGrid = [9, 12, 4, 6, 7, 2, 5, 8, 11, 3, 10];
+  greenGrid = [8, 2, 10, 12, 6, 9, 7, 4, 5, 11, 3];
+  blueGrid = [5, 7, 11, 9, 12, 3, 8, 10, 2, 6, 4];
 
   crossedRed: number[] = [];
   crossedYellow: number[] = [];
@@ -131,7 +131,7 @@ export class SimpleGridComponent implements OnInit {
 
   countTotalYellow() {
     this.points.map((elem) => {
-      if (elem.numberOfCross === this.crossedYellow.length+1) {
+      if (elem.numberOfCross === this.crossedYellow.length + 1) {
         this.totalYellow = elem.points;
       }
     });
@@ -139,7 +139,7 @@ export class SimpleGridComponent implements OnInit {
 
   countTotalGreen() {
     this.points.map((elem) => {
-      if (elem.numberOfCross === this.crossedGreen.length+1) {
+      if (elem.numberOfCross === this.crossedGreen.length + 1) {
         this.totalGreen = elem.points;
       }
     });
@@ -147,7 +147,7 @@ export class SimpleGridComponent implements OnInit {
 
   countTotalBlue() {
     this.points.map((elem) => {
-      if (elem.numberOfCross === this.crossedBlue.length+1) {
+      if (elem.numberOfCross === this.crossedBlue.length + 1) {
         this.totalBlue = elem.points;
       }
     });
@@ -155,7 +155,7 @@ export class SimpleGridComponent implements OnInit {
 
   countTotalRed() {
     this.points.map((elem) => {
-      if (elem.numberOfCross === this.crossedRed.length+1) {
+      if (elem.numberOfCross === this.crossedRed.length + 1) {
         this.totalRed = elem.points;
       }
     });

@@ -1,9 +1,13 @@
+
+
 .row {
   display: flex;
   margin: 2%;
   height: 15vh;
   text-align: center;
   font-size: 35px;
+  background-color: rgb(250, 82, 82);
+  border-radius: 30px;
 }
 
 .red {
@@ -12,8 +16,8 @@
 }
 
 .yellow {
-  background-color: rgb(235, 211, 76);
-  color: rgb(242, 227, 21);
+  background-color: rgb(215, 191, 57);
+  color: rgb(215, 191, 57);
 }
 
 .green {
@@ -72,7 +76,7 @@
 }
 
 .yellowImg, .yellowScore {
-  background-color: rgb(235, 211, 76);
+  background-color: rgb(215, 191, 57);
 }
 
 .greenImg, .greenScore {
@@ -120,8 +124,9 @@ input[type="checkbox"] {
   left: 0;
   height: 90vh;
   width: 100%;
-  background: #fffffff0;
+  background: rgba(43, 41, 76, 0.957);;
   text-align: center;
+  color:white
 }
 
 .scoreByColor{
@@ -136,11 +141,11 @@ input[type="checkbox"] {
     font-size: 40px;
     border-radius: 10px;
     color: white;
+    margin-top: 2.5%;
     
 }
 
-.symbol, .malusScore{
-    color: black;
+.symbol{
     font-weight: bold;
 }
 
@@ -150,5 +155,42 @@ margin-top: 2%;
     width: 20px;
     height: auto;
 }
+
+.totalPoints{
+    margin: 0px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 60px;
+}
+
+
+button {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 4px 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+
 
 

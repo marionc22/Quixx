@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SimpleGridComponent } from './components/simple-grid/simple-grid.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { MixedGridComponent } from './components/mixed-grid/mixed-grid.component';
+import { RandomGridComponent } from './components/random-grid/random-grid.component';
 
 
 @NgModule({
@@ -12,6 +14,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     AppComponent,
     SimpleGridComponent,
     HomepageComponent,
+    MixedGridComponent,
+    RandomGridComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+<div class="body">
 <div class="row">
   <div [ngClass]="redClosed ? 'lineClosed' : 'red'" *ngFor="let red of redGrid">
     <div (click)="addRed(red)" class="redSquare">
@@ -104,11 +105,10 @@
   />
 </div>
 
-<Button (click)="getTotal()">Fin de partie</Button>
+<Button class="button-3" (click)="getTotal()">Fin de partie</Button>
 
 <div  *ngIf="displayTotal" class="popUpFinal">
     <img (click)="this.displayTotal = false" class="crossFinal" src="../../../assets/cross.png" >
-    <p>Score Final</p>
     <div class="scoreByColor">
   
   <p class="redScore">{{ totalRed }}</p> <p class="symbol">+</p>
@@ -118,10 +118,11 @@
   <p class="malusScore">{{totalMalus}}</p>
 </div>
 
-<h2>Total</h2>
-<p>{{totalPoints}}</p>
+<h2>TOTAL</h2>
+<p class="totalPoints">{{totalPoints}}</p>
 
-<button>Rejouer</button>
+<button><a [routerLink]="['/']">Rejouer</a></button>
+</div>
 </div>
 
 

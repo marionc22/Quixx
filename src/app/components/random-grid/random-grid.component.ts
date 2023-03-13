@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-simple-grid',
-  templateUrl: './simple-grid.component.html',
-  styleUrls: ['./simple-grid.component.css'],
+  selector: 'app-random-grid',
+  templateUrl: './random-grid.component.html',
+  styleUrls: ['./random-grid.component.css']
 })
-export class SimpleGridComponent implements OnInit {
+export class RandomGridComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.shuffleArray(this.redGrid)
+    this.shuffleArray(this.yellowGrid)
+    this.shuffleArray(this.blueGrid)
+    this.shuffleArray(this.greenGrid)
+  }
 
   redGrid = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   yellowGrid = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -51,6 +56,15 @@ export class SimpleGridComponent implements OnInit {
     { numberOfCross: 11, points: 66 },
     { numberOfCross: 12, points: 78 },
   ];
+
+shuffleArray (array : number[]) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+  }
 
   addRed(number: number) {
     if (this.redClosed === false) {
