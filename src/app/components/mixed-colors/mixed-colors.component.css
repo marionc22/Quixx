@@ -1,16 +1,11 @@
-
-
-.row {
+.line {
     display: flex;
     margin: 2%;
     height: 15vh;
     text-align: center;
     font-size: 35px;
-    background-color: rgb(250, 82, 82);
-    border-radius: 30px;
-  }
-  
-  .red {
+}
+.red {
     background-color: rgb(250, 82, 82);
     color: rgb(250, 82, 82);
   }
@@ -35,6 +30,7 @@
   .blue,
   .green {
     width: 100%;
+    padding-right: 6px;
   }
   
   .yellowSquare,
@@ -45,6 +41,7 @@
     width: 90%;
     position: relative;
     margin: 7px;
+
   }
   
   .redSquare {
@@ -91,6 +88,7 @@
     background-color: rgb(127, 128, 150);
     color: rgb(49, 50, 50);
     width: 100%;
+    padding-right: 6px;
   }
   
   .imgClosed {

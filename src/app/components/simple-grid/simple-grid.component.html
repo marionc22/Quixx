@@ -119,8 +119,11 @@
 </div>
 
 <h2>TOTAL</h2>
-<p class="totalPoints">{{totalPoints}}</p>
-
+<div *ngIf="totalPoints < 80" id="hideMe">
+    <p>PAS TOP! FAIS MIEUX LA PROCHAINE FOIS</p>
+    <img src="../../../assets/gersou.png" width="400px">
+</div>
+<p class="totalPoints">{{ totalPoints }}</p>
 <button><a [routerLink]="['/']">Rejouer</a></button>
 </div>
 </div>

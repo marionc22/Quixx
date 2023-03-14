@@ -9,6 +9,8 @@ import { MixedGridComponent } from './components/mixed-grid/mixed-grid.component
 import { RandomGridComponent } from './components/random-grid/random-grid.component';
 
 import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
+import { MixedColorsComponent } from './components/mixed-colors/mixed-colors.component';
+import { MixedNumberColorComponent } from './components/mixed-number-color/mixed-number-color.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
     HomepageComponent,
     MixedGridComponent,
     RandomGridComponent,
+    MixedColorsComponent,
+    MixedNumberColorComponent,
   ],
   imports: [
     BrowserModule,

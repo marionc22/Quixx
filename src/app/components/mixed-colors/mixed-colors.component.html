@@ -1,0 +1,102 @@
+<div class="body">
+  <div class="row">
+    <div class="line" *ngFor="let line of grid">
+      <div
+        [ngClass]="  linesClosed.indexOf(object.color) >= 0
+        ? 'lineClosed' :
+          object.color === 'red'
+            ? 'red'
+            : object.color === 'green'
+            ? 'green'
+            : object.color === 'yellow'
+            ? 'yellow'
+            : 'blue'
+        "
+        *ngFor="let object of line"
+      >
+        <div
+        (click)="addCross(object.id, object.color)"
+          [ngClass]="
+            object.color === 'red'
+              ? 'redSquare'
+              : object.color === 'green'
+              ? 'greenSquare'
+              : object.color === 'yellow'
+              ? 'yellowSquare'
+              : 'blueSquare'
+          "
+        >
+          {{ object.number }}
+          <img  *ngIf="crossedNumbers.indexOf(object.id) >= 0" class="cross" src="../../../assets/cross.png" />
+        </div>
+      </div>
+      <div
+        (click)="closeLine(line[10].color)"
+        [ngClass]="  linesClosed.indexOf(line[10].color) >= 0
+        ? 'imgClosed' :
+          line[10].color === 'red'
+            ? 'redImg'
+            : line[10].color === 'green'
+            ? 'greenImg'
+            : line[10].color === 'yellow'
+            ? 'yellowImg'
+            : line[10].color === 'blue'
+            ? 'blueImg'
+            : ''
+        "
+      >
+        <img
+        class="cadenas"
+          src="../../../assets/picto-cadenas.png"
+          width="50px"
+          height="40px"
+        />
+        <img
+          *ngIf="linesClosed.indexOf(line[10].color) >= 0"
+          class="cross"
+          src="../../../assets/cross.png"
+        />
+  
+      </div>
+    </div>
+
+    <div class="malus">
+      <input (change)="addMalus($event)" type="checkbox" /><input
+        (change)="addMalus($event)"
+        type="checkbox"
+      /><input (change)="addMalus($event)" type="checkbox" /><input
+        (change)="addMalus($event)"
+        type="checkbox"
+      />
+    </div>
+
+    <Button class="button-3" (click)="getTotal()">Fin de partie</Button>
+
+    <div *ngIf="displayTotal" class="popUpFinal">
+      <img
+        (click)="this.displayTotal = false"
+        class="crossFinal"
+        src="../../../assets/cross.png"
+      />
+      <div class="scoreByColor">
+        <p class="redScore">{{ totalRed }}</p>
+        <p class="symbol">+</p>
+        <p class="yellowScore">{{ totalYellow }}</p>
+        <p class="symbol">+</p>
+        <p class="greenScore">{{ totalGreen }}</p>
+        <p class="symbol">+</p>
+        <p class="blueScore">{{ totalBlue }}</p>
+        <p class="symbol">-</p>
+        <p class="malusScore">{{ totalMalus }}</p>
+      </div>
+
+      <h2>TOTAL</h2>
+      <div *ngIf="totalPoints < 80" id="hideMe">
+          <p>PAS TOP! FAIS MIEUX LA PROCHAINE FOIS</p>
+          <img src="../../../assets/gersou.png" width="400px">
+      </div>
+      <p class="totalPoints">{{ totalPoints }}</p>
+  <button><a [routerLink]="['/']">Rejouer</a></button>
+    </div>
+  </div>
+</div>

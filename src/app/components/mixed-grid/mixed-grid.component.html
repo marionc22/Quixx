@@ -11,7 +11,7 @@
         </div>
       </div>
       <div (click)="addRed(13)" [ngClass]="redClosed ? 'imgClosed' : 'redImg'">
-        <img src="../../../assets/picto-cadenas.png" width="50px" height="40px" />
+        <img class="cadenas" src="../../../assets/picto-cadenas.png" width="50px" height="40px" />
         <img
           *ngIf="crossedRed.indexOf(13) >= 0"
           class="cross"
@@ -37,7 +37,7 @@
         (click)="addYellow(13)"
         [ngClass]="yellowClosed ? 'imgClosed' : 'yellowImg'"
       >
-        <img src="../../../assets/picto-cadenas.png" width="50px" height="40px" />
+        <img class="cadenas" src="../../../assets/picto-cadenas.png" width="50px" height="40px" />
         <img
           *ngIf="crossedYellow.indexOf(13) >= 0"
           class="cross"
@@ -63,7 +63,7 @@
         (click)="addGreen(13)"
         [ngClass]="greenClosed ? 'imgClosed' : 'greenImg'"
       >
-        <img src="../../../assets/picto-cadenas.png" width="50px" height="40px" />
+        <img class="cadenas" src="../../../assets/picto-cadenas.png" width="50px" height="40px" />
         <img
           *ngIf="crossedGreen.indexOf(13) >= 0"
           class="cross"
@@ -86,7 +86,7 @@
         </div>
       </div>
       <div (click)="addBlue(13)" [ngClass]="blueClosed ? 'imgClosed' : 'blueImg'">
-        <img src="../../../assets/picto-cadenas.png" width="50px" height="40px" />
+        <img class="cadenas" src="../../../assets/picto-cadenas.png" width="50px" height="40px" />
         <img
           *ngIf="crossedBlue.indexOf(13) >= 0"
           class="cross"
@@ -119,9 +119,12 @@
     </div>
     
     <h2>TOTAL</h2>
-    <p class="totalPoints">{{totalPoints}}</p>
-    
-    <button><a [routerLink]="['/']">Rejouer</a></button>
+    <div *ngIf="totalPoints < 80" id="hideMe">
+        <p>PAS TOP! FAIS MIEUX LA PROCHAINE FOIS</p>
+        <img src="../../../assets/gersou.png" width="400px">
+    </div>
+    <p class="totalPoints">{{ totalPoints }}</p>
+<button><a [routerLink]="['/']">Rejouer</a></button>
     </div>
     </div>
     

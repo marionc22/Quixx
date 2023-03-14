@@ -5,7 +5,7 @@
 }
 
 a {
-    margin-top: 5%;
+    margin-top: 3%;
     font-size: 25px;
     font-weight: bold;
 }
@@ -20,6 +20,10 @@ a {
 
 .green {
     color: rgb(35, 169, 35);
+}
+
+.blue {
+   color :  rgb(82, 118, 250);
 }
 
 img {
