@@ -184,4 +184,8 @@ shuffleArray (array : number[]) {
       this.totalMalus;
     this.displayTotal = true;
   }
+
+  reload(){
+    location.reload()
+  }
 }

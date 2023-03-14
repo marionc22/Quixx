@@ -106,6 +106,7 @@
     </div>
     
     <Button class="button-3" (click)="getTotal()">Fin de partie</Button>
+    <button (click)="reload()">Remélanger</button>
     
     <div  *ngIf="displayTotal" class="popUpFinal">
         <img (click)="this.displayTotal = false" class="crossFinal" src="../../../assets/cross.png" >

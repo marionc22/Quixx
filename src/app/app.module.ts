@@ -8,6 +8,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { MixedGridComponent } from './components/mixed-grid/mixed-grid.component';
 import { RandomGridComponent } from './components/random-grid/random-grid.component';
 
+import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { RandomGridComponent } from './components/random-grid/random-grid.compon
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{provide : LocationStrategy , useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
